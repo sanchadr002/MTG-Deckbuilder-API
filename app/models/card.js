@@ -1,6 +1,8 @@
 // create mongoose variable for reference in export
 const mongoose = require('mongoose')
 
+const { Schema } = mongoose
+
 // schema for the Card model
 const cardSchema = new Schema(
     {

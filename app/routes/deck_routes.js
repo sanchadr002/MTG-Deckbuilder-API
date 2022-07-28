@@ -42,3 +42,5 @@ const router = express.Router()
 // {{{-----DELETE-----}}}
     // DECK DELETE
     // users can delete decks they don't want as a part of their collection anymore
+
+module.exports = router

@@ -45,3 +45,5 @@ const router = express.Router()
     // having a delete button for the card could prove to be problematic, as having the card in 
     // multiple decks would then cause multiple decks would have object reference IDs to objects that don't exist
     // will have to figure out a way to delete cards if they only exist in the deck they're being removed from for the sake of saving database space
+
+module.exports = router
