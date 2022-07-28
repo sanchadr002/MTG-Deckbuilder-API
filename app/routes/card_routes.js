@@ -37,3 +37,11 @@ const router = express.Router()
 // {{{-----UPDATE-----}}}
 // CARD UPDATE
     // card update unnecessary; players cannot make changes to cards, so there is no need for users of this app to be able to change card information
+
+// {{{-----DELETE-----}}}
+// CARD DELETE
+    // users will be able to edit their decks to remove cards from it which removes object reference IDs from the deck
+    // however this doesn't remove the card from the database
+    // having a delete button for the card could prove to be problematic, as having the card in 
+    // multiple decks would then cause multiple decks would have object reference IDs to objects that don't exist
+    // will have to figure out a way to delete cards if they only exist in the deck they're being removed from for the sake of saving database space
