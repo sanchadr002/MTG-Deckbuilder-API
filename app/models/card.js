@@ -1,6 +1,8 @@
 // create mongoose variable for reference in export
 const mongoose = require('mongoose')
 
+const { Schema } = mongoose
+
 // schema for the Card model
 const cardSchema = new Schema(
     {
@@ -13,7 +15,8 @@ const cardSchema = new Schema(
         name: { type: String },
         manaValue: { type: String },
         colorIdentity: { type: String },
-        cardType: { type: String }
+        cardType: { type: String },
+        image_uri: { type: String }
     },
     { timestamps: true }
 )

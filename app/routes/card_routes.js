@@ -23,6 +23,19 @@ const router = express.Router()
 // {{{-----INDEX-----}}}
 // CARD INDEX
     // lead to a page displaying cards currently in user's created decks
+router.get('/cards', (req, res, next) => {
+    Card.find()
+        .then((cards) => {
+            // 'cards' will be an array of Mongoose documents
+            // we want to convert each one to a POJO, so we use .map to apply .toObject to each one
+            return cards.map((card) => {card.toObject()})
+        })
+        .save(card)
+        // respond with status 200 and JSON of the characters
+        .then((cards) => res.status(200).json({ cards: cards }))
+        // if an error occurs, pass it to the handler
+        .catch(next)
+})
 
 // {{{-----SHOW-----}}}
 // CARD SHOW
@@ -45,3 +58,5 @@ const router = express.Router()
     // having a delete button for the card could prove to be problematic, as having the card in 
     // multiple decks would then cause multiple decks would have object reference IDs to objects that don't exist
     // will have to figure out a way to delete cards if they only exist in the deck they're being removed from for the sake of saving database space
+
+module.exports = router
